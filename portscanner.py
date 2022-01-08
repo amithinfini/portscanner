@@ -7,12 +7,16 @@ from IPy import IP  #for converting domains into IP's
 def scan_port(ipaddress, port):
     try:
         sock = socket.socket()
-        sock.settimeout(1.0)  # to make the scanning faster
+        sock.settimeout(0.5)  # to make the scanning faster
         sock.connect((ipaddress, port))
         print('[+] Port ' + str(port) + ' is Open')
     except:
-        print('[-] Port ' + str(port) + ' is Closed')
+        pass
+        # print('[-] Port ' + str(port) + ' is Closed')
 
 ip = input('[+] Enter the IP Address: ')
-port = 80
-scan_port(ip, port)
+for port in range(1,100):
+    scan_port(ip, port)
+
+# port = 80
+# scan_port(ip, port)
