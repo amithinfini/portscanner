@@ -3,7 +3,7 @@ from IPy import IP  #for converting domains into IP's
 
 def scan(target):
     converted_ip = check_ip(target)
-    print('\n[-_O] Scanning Target ' + str(target))
+    print('\n[-_0] Scanning Target ' + str(target))
     for port in range(79, 89):
         scan_port(converted_ip, port)
 
@@ -23,7 +23,7 @@ def scan_port(ipaddress, port):
     except:
         pass
 
-target = input('[+] Enter the Target/s separated by , ')
+target = input('[+] Enter the Target/s(separated by ,): ')
 
 if ',' in target:
     for ip_add in target.split(','):
